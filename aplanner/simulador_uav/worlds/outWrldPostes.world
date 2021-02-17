@@ -1,0 +1,359 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="vrc_task_1">
+    <!-- place user camera -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-15 0 4.57585 0 0.317796 0</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+ <physics name='default_physics' default='0' type='ode'>
+      <gravity>0 0 -9.8066</gravity>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>10</iters>
+          <sor>1.0</sor>
+          <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+      <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    </physics>
+
+    <!-- Light Source -->
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <include>
+      <uri>model://vrc_driving_terrain</uri>
+    </include>
+
+ 
+	  
+	  
+	<!-- Postes -->
+	  
+	<include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_1</name>
+      <static>true</static>
+      <pose>24 4 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_2</name>
+      <static>true</static>
+      <pose>54 4 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_3</name>
+      <static>true</static>
+      <pose>84 4 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_4</name>
+      <static>true</static>
+      <pose>14 -4 0 0 0 3.1415</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_5</name>
+      <static>true</static>
+      <pose>44 -4 0 0 0 3.1415</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_6</name>
+      <static>true</static>
+      <pose>74 -4 0 0 0 3.1415</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_7</name>
+      <static>true</static>
+      <pose>148 104 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_8</name>
+      <static>true</static>
+      <pose>178 104 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_9</name>
+      <static>true</static>
+      <pose>155 96 0 0 0 3.1415</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_10</name>
+      <static>true</static>
+      <pose>188 96 0 0 0 3.1415</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_11</name>
+      <static>true</static>
+      <pose>102 8 0 0 0 .785</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_12</name>
+      <static>true</static>
+      <pose>123 29 0 0 0 .785</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_13</name>
+      <static>true</static>
+      <pose>144 50 0 0 0 .785</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_14</name>
+      <static>true</static>
+      <pose>99 -4 0 0 0 3.1415</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_15</name>
+      <static>true</static>
+      <pose>120 14.5 0 0 0 -2.35</pose>
+    </include>
+    <include>
+      <uri>model://lamp_post</uri>
+      <name>lamp_post_16</name>
+      <static>true</static>
+      <pose>155 52 0 0 0 -1.9</pose>
+    </include>
+
+	  
+	<!-- Ruas -->
+	
+	<!-- Torres e Cabos -->
+
+  <model name='Torre_1'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.7</radius>
+              <length>10</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+      <pose frame=''>1.82 -4 4.5 0 0 0</pose>
+    </model>
+
+  <model name='Torre_2'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.7</radius>
+              <length>18</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+      <pose frame=''>-30 -4 9 0 0 0</pose>
+    </model>
+
+  <model name='Torre_3'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.7</radius>
+              <length>18</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+      <pose frame=''>-71.63 -4 20 0 0 0</pose>
+    </model>
+
+
+  <model name='Torre_4'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.7</radius>
+              <length>25</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+      <pose frame=''>-121.5 -55.8 37 0 0 0</pose>
+    </model>
+
+
+
+
+    <model name='Tline_Wire_low_res_1'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>75</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+      <pose frame=''>-35 -4.08 18.5 -2.004012 0.898703 -1.920104</pose>
+    </model>
+
+    <model name='Tline_Wire_low_res_2'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>75</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+      <pose frame=''>-96.7 -29.9 38 0.055157 -1.289136 0.744031</pose>
+    </model>
+
+	  
+	<!-- Fios Ruas -->
+	  
+
+    <model name='Wire_low_res_1'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>75</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+      <pose frame=''>60 4 9 0 1.570796 0</pose>
+    </model>
+
+
+      <!-- Poste 1   <pose>24 4 0 0 0 0</pose>  -->
+      <!-- Poste 2   <pose>54 4 0 0 0 0</pose>  -->
+    
+
+    <model name='Wire_low_res_2'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>96.5</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+        <pose frame=''>50.8 -4 9 0 1.570796 0</pose>
+    </model>
+
+    <model name='Wire_low_res_3'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>79.8</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+        <pose frame=''>127.2 24.2 9 0 1.570796 0.785398</pose>
+    </model>
+
+
+
+    <model name='Wire_low_res_4'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>44</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+        <pose frame=''>155 74 9 0 1.570796 1.570796</pose>
+    </model>
+
+
+    <model name='Wire_low_res_5'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>44</length>
+            </cylinder>
+          </geometry>
+        </visual>
+      </link>
+        <pose frame=''>177 96 9 0 1.570796 0</pose>
+    </model>
+
+
+
+  </world>
+</sdf>
